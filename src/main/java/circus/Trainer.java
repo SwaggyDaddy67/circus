@@ -1,3 +1,9 @@
+package circus;
+
+import circus.animal.Animal;
+import circus.animal.Bird;
+import circus.animal.Duck;
+
 public class Trainer {
     public static void main(String[] args) {
         Duck d = new Duck();
@@ -25,7 +31,13 @@ public class Trainer {
     }
 
     private static void train(Bird bird) {
-        Duck d = (Duck) bird;
-        d.swim();
+        if (bird instanceof Duck) {
+            Duck d = (Duck) bird;
+            d.swim();
+        } else {
+            System.out.println(bird);
+            System.out.println("Not a duck... Not a duck...");
+        }
     }
 }
+//3 thing: todo, event, deadline << inherit from Task
